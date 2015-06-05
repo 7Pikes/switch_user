@@ -1,5 +1,4 @@
 class SwitchUserController < ApplicationController
-  include AuthenticatedSystem
   authorize only: [:remember_user, :set_current_user]
   before_filter :developer_modes_only
 

@@ -1,6 +1,7 @@
 module SwitchUser
   module Provider
     class Authlogic < Base
+      include AuthenticatedSystem
       def initialize(controller)
         @controller = controller
       end
