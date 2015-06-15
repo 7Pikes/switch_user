@@ -1,7 +1,6 @@
 module SwitchUser
   module Provider
     class Authlogic < Base
-      include AuthenticatedSystem
       def initialize(controller)
         @controller = controller
       end
@@ -11,7 +10,7 @@ module SwitchUser
       end
 
       def logout(scope = nil)
-        @controller.current_user_session.destroy
+        current_user_session.destroy
       end
 
       def current_user(scope = nil)
