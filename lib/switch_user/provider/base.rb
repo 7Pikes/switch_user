@@ -1,6 +1,7 @@
 module SwitchUser
   module Provider
     class Base
+      include AuthenticatedSystem
       def current_users_without_scope
         SwitchUser.available_scopes.inject([]) do |users, scope|
           user = current_user(scope)
